@@ -37,7 +37,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 border-t border-[var(--line)] text-center">
-      <div className="max-w-[1080px] mx-auto px-12" ref={ref}>
+      <div className="max-w-[1280px] mx-auto px-6" ref={ref}>
         <motion.div variants={fadeUp} initial="hidden" animate={inView ? 'show' : 'hidden'}>
           <h2 className="font-serif italic text-[clamp(40px,6vw,78px)] font-normal tracking-[-2px] leading-[1.0] mb-5" style={{ color: 'var(--ink)' }}>
             Let's build<br />something real.

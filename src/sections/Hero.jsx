@@ -30,8 +30,8 @@ export default function Hero() {
         <HeroCanvas />
       </Suspense>
 
-      <div className="w-full max-w-[1080px] mx-auto px-12 relative z-10">
-        <div className="grid grid-cols-[1fr_400px] gap-18 items-center max-[900px]:grid-cols-1 max-[900px]:gap-10">
+      <div className="w-full max-w-[1280px] mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-[1fr_400px] gap-10 items-center max-[900px]:grid-cols-1 max-[900px]:gap-10">
 
           {/* ── Left ─────────────────────────────────────────── */}
           <div>

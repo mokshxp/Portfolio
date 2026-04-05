@@ -47,7 +47,7 @@ export default function Goals() {
 
   return (
     <section id="goals" className="py-24 border-t border-[var(--line)]">
-      <div className="max-w-[1080px] mx-auto px-12">
+      <div className="max-w-[1280px] mx-auto px-6">
         <motion.div
           ref={ref}
           variants={fadeUp} initial="hidden" animate={inView ? 'show' : 'hidden'}

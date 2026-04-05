@@ -20,44 +20,66 @@ function ProjectCard({ project, index }) {
     <motion.div
       ref={ref}
       variants={fadeUp} custom={index} initial="hidden" animate={inView ? 'show' : 'hidden'}
-      whileHover={{ y: -3, borderColor: 'var(--ink2)' }}
-      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      whileHover={{ y: -6, borderColor: 'var(--line-strong)', backgroundColor: 'var(--paper)' }}
+      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
       onClick={() => openModal(project)}
-      onMouseEnter={() => setCursor('project', 'View')}
+      onMouseEnter={() => setCursor('project', 'Explore')}
       onMouseLeave={resetCursor}
-      className="grid grid-cols-[72px_1fr_44px] gap-7 items-start p-8 border border-[var(--line)] rounded-2xl transition-colors"
+      className="group relative grid grid-cols-[80px_1fr_180px_48px] gap-8 items-center p-10 border border-[var(--line)] rounded-[32px] transition-all duration-500 overflow-hidden"
       style={{ background: 'var(--surface)', cursor: 'none' }}
     >
-      {/* Number */}
-      <div className="font-mono text-[11px] pt-0.5" style={{ color: 'var(--ink3)' }}>
-        {project.num} / 03
+      {/* Background Glow */}
+      <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br ${project.gradient} pointer-events-none`} />
+
+      {/* Number Indicator */}
+      <div className="relative flex flex-col items-center">
+        <span className="font-mono text-[10px] tracking-[2px] opacity-40 mb-1" style={{ color: 'var(--ink)' }}>INDEX</span>
+        <div className="font-serif text-[28px] italic leading-none" style={{ color: 'var(--ink2)' }}>
+          {project.num}
+        </div>
       </div>
 
-      {/* Content */}
-      <div>
-        <div className="font-serif text-[24px] font-normal mb-2 tracking-[-0.3px]" style={{ color: 'var(--ink)' }}>
-          {project.name}
+      {/* Main Content */}
+      <div className="relative z-10">
+        <div className="flex items-baseline gap-4 mb-3">
+          <h3 className="font-serif text-[32px] font-normal leading-none tracking-[-0.5px]" style={{ color: 'var(--ink)' }}>
+            {project.name}
+          </h3>
+          <span className="font-mono text-[11px] opacity-40 uppercase tracking-widest hidden sm:block">/ {project.tagline || 'Portfolio'}</span>
         </div>
-        <p className="text-[14px] leading-[1.7] mb-4 max-w-[580px]" style={{ color: 'var(--ink2)' }}>
+        
+        <p className="text-[15px] leading-[1.6] mb-6 max-w-[620px] font-normal" style={{ color: 'var(--ink2)' }}>
           {project.desc}
         </p>
-        <div className="flex flex-wrap gap-1.5">
+
+        <div className="flex flex-wrap gap-2">
           {project.tags.map((t) => (
-            <span key={t.label} className={`tag-${t.variant} px-2.5 py-1 rounded-full text-[11px] font-mono`}>
+            <span key={t.label} className={`tag-pill tag-${t.variant}`}>
               {t.label}
             </span>
           ))}
         </div>
       </div>
 
-      {/* Arrow */}
-      <motion.div
-        className="w-10 h-10 rounded-full border border-[var(--line)] flex items-center justify-center text-[15px] transition-colors mt-0.5 flex-shrink-0"
-        style={{ color: 'var(--ink2)' }}
-        whileHover={{ background: 'var(--ink)', color: 'var(--paper)', borderColor: 'var(--ink)' }}
-      >
-        ↗
-      </motion.div>
+      {/* Refined Image Thumbnail */}
+      <div className="relative h-[110px] w-full rounded-2xl overflow-hidden border border-[var(--line)] bg-[var(--surface)] max-[1100px]:hidden group-hover:scale-[1.02] transition-transform duration-500 shadow-sm">
+        {project.image ? (
+            <img src={project.image} alt={project.name} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
+        ) : (
+            <div className={`w-full h-full bg-gradient-to-br ${project.gradient} opacity-40`} />
+        )}
+        <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
+      </div>
+
+      {/* Action Button */}
+      <div className="relative flex justify-end">
+        <motion.div
+           className="w-12 h-12 rounded-full border border-[var(--line-strong)] flex items-center justify-center text-[18px] transition-all duration-500 bg-transparent group-hover:bg-[var(--ink)] group-hover:text-[var(--paper)] group-hover:border-[var(--ink)]"
+           style={{ color: 'var(--ink)' }}
+        >
+          <span className="group-hover:rotate-45 transition-transform duration-500">↗</span>
+        </motion.div>
+      </div>
     </motion.div>
   );
 }
@@ -68,7 +90,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-24 border-t border-[var(--line)]">
-      <div className="max-w-[1080px] mx-auto px-12">
+      <div className="max-w-[1280px] mx-auto px-6">
         <motion.div
           ref={ref}
           variants={fadeUp} initial="hidden" animate={inView ? 'show' : 'hidden'}
@@ -80,7 +102,7 @@ export default function Projects() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-6">
           {projects.map((p, i) => (
             <ProjectCard key={p.id} project={p} index={i} />
           ))}

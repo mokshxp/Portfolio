@@ -55,12 +55,16 @@ export default function ProjectModal() {
             {/* Body */}
             <div className="px-8 py-8 space-y-8">
 
-              {/* Gradient banner */}
+              {/* Gradient banner / Image preview */}
               <div
-                className={`h-48 rounded-2xl flex items-center justify-center text-7xl bg-gradient-to-br ${modalProject.gradient}`}
+                className={`h-[320px] rounded-2xl overflow-hidden flex items-center justify-center text-7xl bg-gradient-to-br ${modalProject.gradient}`}
                 style={{ border: '1px solid var(--line)' }}
               >
-                {modalProject.id === 'skilio' ? '🎯' : modalProject.id === 'pulsepoint' ? '🏥' : '🎮'}
+                {modalProject.image ? (
+                  <img src={modalProject.image} alt={modalProject.name} className="w-full h-full object-cover" />
+                ) : (
+                  modalProject.id === 'skilio' ? '🎯' : modalProject.id === 'pulsepoint' ? '🏥' : '🎮'
+                )}
               </div>
 
               {/* Tagline */}

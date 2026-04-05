@@ -15,7 +15,7 @@ export default function ProjectsPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="pt-24"
         >
-            <div className="max-w-[1080px] mx-auto px-12 mb-[-64px]">
+            <div className="max-w-[1280px] mx-auto px-6 mb-[-64px]">
                  <div className="font-mono text-[12px] tracking-[0.5px] mb-2" style={{ color: 'var(--ink3)' }}>
                     Moksh Gupta / Selected Works
                 </div>

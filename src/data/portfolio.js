@@ -4,18 +4,16 @@ export const projects = [
     id: 'skilio',
     num: '01',
     name: 'Skilio',
-    tagline: 'AI-powered career platform',
-    desc: 'A premium AI-powered career platform bridging talent and industry-level performance. Features adaptive interview simulations, a Peak Performance Score dashboard, AI resume auditing, and an in-browser Monaco code editor — built on a full-stack architecture with real-time WebSockets.',
-    longDesc: `Skilio is built for serious candidates who want more than practice tests. The platform uses OpenAI and NVIDIA NIM to simulate real-world interviews, score candidates on industry benchmarks, and give actionable feedback.
-
-Key Features:
-• Adaptive interview engine — questions adapt to your performance in real-time
-• Peak Performance Score — a composite metric across 5 dimensions (speed, accuracy, clarity, depth, consistency)
-• AI Resume Auditor — uploads your PDF, scores it, suggests rewrites
-• Monaco Editor — in-browser code editor with syntax highlighting for 20+ languages
-• Real-time WebSocket feedback — zero-latency interview grading
-
-Architecture: React 18 frontend, Node.js + Express backend, Supabase for auth + DB, Redis for sessions, Razorpay for subscriptions.`,
+    image: '/skilio_full.png',
+    tagline: 'Practice Real Interviews. Get Hired Faster.',
+    desc: 'A premium AI-powered career platform bridging talent and industry-level performance. Features adaptive AI interview simulations, resume auditing, and real-time performance analytics.',
+    longDesc: `Skilio transforms your interview preparation from guesswork to strategy. The platform uses AI to simulate real-world technical interviews and provide instant, actionable feedback.
+    
+    Key Features:
+    • AI Interviewer — Real-time voice-enabled technical interviews
+    • AI Resume Auditor — Instant screening and optimization tips
+    • Performance Analytics — Deep metrics on your industry readiness
+    • Monaco Editor — Realistic coding environment for technical rounds.`,
     tags: [
       { label: 'React 18', variant: 'g' },
       { label: 'Node.js', variant: 'g' },
@@ -33,6 +31,7 @@ Architecture: React 18 frontend, Node.js + Express backend, Supabase for auth + 
     id: 'pulsepoint',
     num: '02',
     name: 'PulsePoint AI',
+    image: '/pulsepoint_full.png',
     tagline: 'Smart health triage app',
     desc: 'A smart health triage app for regions with limited healthcare access. Uses Llama 3.3 70B via Groq to analyze symptoms, categorize risk levels, and navigate users to nearby clinics — with voice input, patient history tracking, and multilingual support.',
     longDesc: `PulsePoint AI was built to solve a real problem: rural areas in India where the nearest doctor is hours away. The app triages your symptoms in under 30 seconds and tells you how urgent the situation is.
@@ -60,6 +59,7 @@ Built with Flutter for cross-platform mobile, Firebase for backend, Groq for inf
     id: 'stickman',
     num: '03',
     name: 'Stickman Hook Clone',
+    image: '/stickman_full.png',
     tagline: 'Physics game from scratch',
     desc: 'A faithful clone of the viral Stickman Hook game — built from scratch. Engineered realistic pendulum physics, smooth player movement, and responsive hook mechanics. A deep dive into game development fundamentals.',
     longDesc: `Building this clone from scratch was a masterclass in physics simulation. Every swing, bounce, and collision was implemented by hand using trigonometry and Newtonian mechanics.

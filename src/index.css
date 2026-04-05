@@ -7,34 +7,50 @@
 /* ── CSS Variables ─────────────────────────────────────────────── */
 :root {
   --ink:         #111110;
-  --ink2:        #6b6b66;
-  --ink3:        #a8a89e;
+  --ink2:        #555550;
+  --ink3:        #94948d;
   --paper:       #faf9f6;
-  --surface:     #f2f0eb;
-  --line:        rgba(17,17,16,0.10);
+  --surface:     #f2f1ec;
+  --line:        rgba(17,17,16,0.06);
+  --line-strong: rgba(17,17,16,0.12);
+  --accent:      #7c6af5;
+  
+  /* Subtle Tag Colors */
+  --tag-bg:      rgba(17,17,16,0.03);
+  --tag-border:  rgba(17,17,16,0.08);
+  
   --green:       #166534;
-  --green-bg:    #dcfce7;
-  --green-text:  #14532d;
-  --amber-bg:    #fef3c7;
+  --green-bg:    rgba(22, 101, 52, 0.05);
+  --green-text:  #166534;
+  
+  --amber-bg:    rgba(146, 64, 14, 0.05);
   --amber-text:  #92400e;
-  --violet-bg:   #ede9fe;
+  
+  --violet-bg:   rgba(91, 33, 182, 0.05);
   --violet-text: #5b21b6;
 }
 
 .dark {
   --ink:         #f0eeea;
-  --ink2:        #9e9c96;
+  --ink2:        #a1a19a;
   --ink3:        #5c5b57;
-  --paper:       #111110;
-  --surface:     #1a1917;
-  --line:        rgba(240,238,234,0.10);
+  --paper:       #0e0d0c;
+  --surface:     #161513;
+  --line:        rgba(240,238,234,0.06);
+  --line-strong: rgba(240,238,234,0.12);
+  
+  --tag-bg:      rgba(240,238,234,0.03);
+  --tag-border:  rgba(240,238,234,0.08);
+
   --green:       #4ade80;
-  --green-bg:    #052e16;
-  --green-text:  #86efac;
-  --amber-bg:    #2c1c03;
-  --amber-text:  #fbbf24;
-  --violet-bg:   #1e1533;
-  --violet-text: #a78bfa;
+  --green-bg:    rgba(74, 222, 128, 0.08);
+  --green-text:  #b3f5cc;
+  
+  --amber-bg:    rgba(251, 191, 36, 0.08);
+  --amber-text:  #fde68a;
+  
+  --violet-bg:   rgba(167, 139, 250, 0.08);
+  --violet-text: #ddd6fe;
 }
 
 /* ── Base ─────────────────────────────────────────────────────── */
@@ -75,9 +91,25 @@ html.lenis, html.lenis body { height: auto; }
 .dark .syn-num { color: #fbbf24; }
 
 /* tag pill variants */
-.tag-g { background: var(--green-bg);  color: var(--green-text); }
-.tag-a { background: var(--amber-bg);  color: var(--amber-text); }
-.tag-p { background: var(--violet-bg); color: var(--violet-text); }
+.tag-pill {
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--ink2);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-family: 'Geist Mono', monospace;
+  transition: all 0.2s ease;
+}
+
+.tag-pill:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.tag-g { color: var(--green-text); border-color: var(--green-bg); background: var(--green-bg); }
+.tag-a { color: var(--amber-text); border-color: var(--amber-bg); background: var(--amber-bg); }
+.tag-p { color: var(--violet-text); border-color: var(--violet-bg); background: var(--violet-bg); }
 
 /* Lenis smooth override for modals */
 body.modal-open { overflow: hidden; }

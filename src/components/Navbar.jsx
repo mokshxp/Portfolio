@@ -45,7 +45,7 @@ export default function Navbar() {
       initial={{ y: -58 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between h-[58px] px-12 border-b border-[var(--line)]"
+      className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between h-[58px] px-6 border-b border-[var(--line)]"
       style={{ background: 'var(--paper)', backdropFilter: 'blur(12px)' }}
     >
       {/* Logo */}
