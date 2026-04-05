@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Variables ─────────────────────────────────────────────── */
+:root {
+  --ink:         #111110;
+  --ink2:        #6b6b66;
+  --ink3:        #a8a89e;
+  --paper:       #faf9f6;
+  --surface:     #f2f0eb;
+  --line:        rgba(17,17,16,0.10);
+  --green:       #166534;
+  --green-bg:    #dcfce7;
+  --green-text:  #14532d;
+  --amber-bg:    #fef3c7;
+  --amber-text:  #92400e;
+  --violet-bg:   #ede9fe;
+  --violet-text: #5b21b6;
+}
+
+.dark {
+  --ink:         #f0eeea;
+  --ink2:        #9e9c96;
+  --ink3:        #5c5b57;
+  --paper:       #111110;
+  --surface:     #1a1917;
+  --line:        rgba(240,238,234,0.10);
+  --green:       #4ade80;
+  --green-bg:    #052e16;
+  --green-text:  #86efac;
+  --amber-bg:    #2c1c03;
+  --amber-text:  #fbbf24;
+  --violet-bg:   #1e1533;
+  --violet-text: #a78bfa;
+}
+
+/* ── Base ─────────────────────────────────────────────────────── */
+* { cursor: none !important; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Geist', system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--ink3); border-radius: 100px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink2); }
+
+/* ── Lenis ────────────────────────────────────────────────────── */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+/* ── Utility ─────────────────────────────────────────────────── */
+.font-serif   { font-family: 'Instrument Serif', Georgia, serif; }
+.font-mono    { font-family: 'Geist Mono', monospace; }
+
+/* code syntax colors */
+.syn-key  { color: #7c6af5; }
+.syn-str  { color: #166534; }
+.syn-num  { color: #b45309; }
+.syn-cmt  { color: var(--ink3); }
+.dark .syn-str { color: #4ade80; }
+.dark .syn-num { color: #fbbf24; }
+
+/* tag pill variants */
+.tag-g { background: var(--green-bg);  color: var(--green-text); }
+.tag-a { background: var(--amber-bg);  color: var(--amber-text); }
+.tag-p { background: var(--violet-bg); color: var(--violet-text); }
+
+/* Lenis smooth override for modals */
+body.modal-open { overflow: hidden; }
+
+/* progress bar custom */
+.progress-fill {
+  height: 100%;
+  border-radius: 100px;
+  background: var(--ink);
+  width: 0;
+  transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.progress-fill.animated { width: var(--target-width); }
+
+/* skeleton pulse */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.skeleton {
+  background: var(--surface);
+  border-radius: 6px;
+  animation: skeleton-pulse 1.8s ease-in-out infinite;
+}
+
+/* Page transition overlay */
+.page-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  background: var(--ink);
+  transform-origin: top;
+}
