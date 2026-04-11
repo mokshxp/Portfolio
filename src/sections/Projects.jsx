@@ -20,13 +20,13 @@ function ProjectCard({ project, index }) {
     <motion.div
       ref={ref}
       variants={fadeUp} custom={index} initial="hidden" animate={inView ? 'show' : 'hidden'}
-      whileHover={{ y: -6, borderColor: 'var(--line-strong)', backgroundColor: 'var(--paper)' }}
+      whileHover={{ y: -6, borderColor: 'var(--line-strong)' }}
       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
       onClick={() => openModal(project)}
       onMouseEnter={() => setCursor('project', 'Explore')}
       onMouseLeave={resetCursor}
-      className="group relative grid grid-cols-[80px_1fr_180px_48px] gap-8 items-center p-10 border border-[var(--line)] rounded-[32px] transition-all duration-500 overflow-hidden"
-      style={{ background: 'var(--surface)', cursor: 'none' }}
+      className="group relative grid grid-cols-[80px_1fr_180px_48px] gap-8 items-center p-10 border border-[var(--line)] rounded-[32px] transition-all duration-500 overflow-hidden bg-[var(--card-bg)]"
+      style={{ cursor: 'none' }}
     >
       {/* Background Glow */}
       <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br ${project.gradient} pointer-events-none`} />
@@ -62,7 +62,7 @@ function ProjectCard({ project, index }) {
       </div>
 
       {/* Refined Image Thumbnail */}
-      <div className="relative h-[110px] w-full rounded-2xl overflow-hidden border border-[var(--line)] bg-[var(--surface)] max-[1100px]:hidden group-hover:scale-[1.02] transition-transform duration-500 shadow-sm">
+      <div className="relative h-[110px] w-full rounded-2xl overflow-hidden border border-[var(--line)] bg-[var(--card-bg)] max-[1100px]:hidden group-hover:scale-[1.02] transition-transform duration-500 shadow-sm">
         {project.image ? (
             <img src={project.image} alt={project.name} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
         ) : (

@@ -25,7 +25,7 @@ function LearningCard({ label, pct, status, delay }) {
       onMouseEnter={() => setCursor('link')}
       onMouseLeave={resetCursor}
       className="p-6 rounded-xl border border-[var(--line)] transition-colors"
-      style={{ background: 'var(--surface)' }}
+      style={{ background: 'var(--card-bg)' }}
     >
       <div className="font-medium text-[13px] mb-4" style={{ color: 'var(--ink)' }}>{label}</div>
       <div className="h-[3px] rounded-full mb-2" style={{ background: 'var(--line)' }}>
@@ -68,7 +68,7 @@ export default function Learning() {
             variants={fadeUp} custom={1} initial="hidden" animate={inView ? 'show' : 'hidden'}
             whileHover={{ y: -4, borderColor: 'var(--line-strong)' }}
             className="group relative p-6 rounded-[24px] border border-[var(--line)] w-full md:w-auto min-w-[300px] overflow-hidden transition-all duration-500"
-            style={{ background: 'var(--surface)' }}
+            style={{ background: 'var(--card-bg)' }}
           >
              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-amber-500/5 to-orange-500/5 pointer-events-none" />
              

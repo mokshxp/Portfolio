@@ -10,7 +10,7 @@
   --ink2:        #555550;
   --ink3:        #94948d;
   --paper:       #faf9f6;
-  --surface:     #f2f1ec;
+  --card-bg:     #f2f1ec;
   --line:        rgba(17,17,16,0.06);
   --line-strong: rgba(17,17,16,0.12);
   --accent:      #7c6af5;
@@ -35,7 +35,7 @@
   --ink2:        #a1a19a;
   --ink3:        #5c5b57;
   --paper:       #0e0d0c;
-  --surface:     #161513;
+  --card-bg:     #161513;
   --line:        rgba(240,238,234,0.06);
   --line-strong: rgba(240,238,234,0.12);
   
@@ -67,7 +67,7 @@ body {
 
 /* ── Scrollbar ────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-track { background: var(--card-bg); }
 ::-webkit-scrollbar-thumb { background: var(--ink3); border-radius: 100px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--ink2); }
 
@@ -130,7 +130,7 @@ body.modal-open { overflow: hidden; }
   50%       { opacity: 0.4; }
 }
 .skeleton {
-  background: var(--surface);
+  background: var(--card-bg);
   border-radius: 6px;
   animation: skeleton-pulse 1.8s ease-in-out infinite;
 }

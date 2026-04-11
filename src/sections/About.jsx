@@ -20,7 +20,7 @@ function StatCard({ value, label, delay }) {
       variants={fadeUp} custom={delay} initial="hidden" animate={inView ? 'show' : 'hidden'}
       whileHover={{ background: 'var(--paper)' }}
       className="p-7 transition-colors"
-      style={{ background: 'var(--surface)' }}
+      style={{ background: 'var(--card-bg)' }}
     >
       <div className="font-serif text-[44px] leading-none mb-1" style={{ color: 'var(--ink)' }}>{value}</div>
       <div className="font-mono text-[11px]" style={{ color: 'var(--ink3)' }}>{label}</div>
@@ -75,7 +75,7 @@ export default function About() {
                 I don't collect tutorials. I <strong className="font-medium" style={{ color: 'var(--ink)' }}>implement</strong>. Every concept I learn becomes real code, a working project, a system that runs.
               </p>
               <p>
-                Currently mastering <strong className="font-medium" style={{ color: 'var(--ink)' }}>DSA</strong>, <strong className="font-medium" style={{ color: 'var(--ink)' }}>full-stack development</strong>, and <strong className="font-medium" style={{ color: 'var(--ink)' }}>AI/ML</strong> — with Google and Amazon in my sights.
+                Currently mastering <strong className="font-medium" style={{ color: 'var(--ink)' }}>Large Language Models</strong>, <strong className="font-medium" style={{ color: 'var(--ink)' }}>Neural Architectures</strong>, and <strong className="font-medium" style={{ color: 'var(--ink)' }}>AI Orchestration</strong> — with a focus on building systems that reason and scale.
               </p>
             </motion.div>
 
@@ -83,7 +83,7 @@ export default function About() {
             <motion.div
               variants={fadeUp} custom={2} initial="hidden" animate={inView ? 'show' : 'hidden'}
               className="mt-8 p-5 rounded-xl border border-[var(--line)]"
-              style={{ background: 'var(--surface)' }}
+              style={{ background: 'var(--card-bg)' }}
             >
               <div className="flex items-center gap-2 mb-4">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ color: 'var(--ink2)' }}>

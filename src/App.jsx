@@ -32,7 +32,7 @@ export default function App() {
     <div className={isDark ? 'dark' : ''}>
       <Toaster position="bottom-center" toastOptions={{
           style: {
-            background: 'var(--surface)',
+            background: 'var(--card-bg)',
             color: 'var(--ink)',
             border: '1px solid var(--line)',
             fontSize: '13px',

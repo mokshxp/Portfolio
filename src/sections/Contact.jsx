@@ -4,6 +4,8 @@ import { useStore } from '../store/useStore';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 
+import { supabase } from '../lib/supabase';
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   show: (i = 0) => ({
@@ -19,20 +21,52 @@ export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Replace with your service_id, template_id and public_key
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formRef.current, 'YOUR_PUBLIC_KEY')
-      .then((result) => {
-          toast.success('Message sent! I will get back to you soon.');
-          formRef.current.reset();
-      }, (error) => {
-          toast.error('Failed to send message. Please try again.');
-          console.error(error);
-      })
-      .finally(() => setLoading(false));
+    const formData = new FormData(formRef.current);
+    const contactData = {
+      name: formData.get('user_name'),
+      email: formData.get('user_email'),
+      message: formData.get('message'),
+      created_at: new Date().toISOString(),
+    };
+
+    try {
+      // 1. Save to Database (Supabase)
+      const { error: dbError } = await supabase
+        .from('contacts')
+        .insert([contactData]);
+
+      if (dbError) {
+        console.error('Supabase Error:', dbError);
+        toast.error('Could not save to database. Did you create the "contacts" table?');
+        setLoading(false);
+        return;
+      }
+
+      // 2. Send Email (Optional)
+      try {
+        await emailjs.sendForm(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID || 'dummy', 
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'dummy', 
+          formRef.current, 
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'dummy'
+        );
+      } catch (emailErr) {
+        console.warn('EmailJS ignored/failed:', emailErr);
+        // We don't stop here, because the DB part succeeded!
+      }
+
+      toast.success('Message sent!');
+      formRef.current.reset();
+    } catch (error) {
+      toast.error('A system error occurred.');
+      console.error('General error:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

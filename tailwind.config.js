@@ -11,24 +11,24 @@ export default {
       },
       colors: {
         ink: {
-          DEFAULT: '#111110',
-          2: '#6b6b66',
-          3: '#a8a89e',
+          DEFAULT: 'var(--ink)',
+          2: 'var(--ink2)',
+          3: 'var(--ink3)',
         },
-        paper: '#faf9f6',
-        surface: '#f2f0eb',
+        paper: 'var(--paper)',
+        surface: 'var(--card-bg)',
         green: {
-          DEFAULT: '#166534',
-          bg: '#dcfce7',
-          text: '#14532d',
+          DEFAULT: 'var(--green)',
+          bg: 'var(--green-bg)',
+          text: 'var(--green-text)',
         },
         amber: {
-          bg: '#fef3c7',
-          text: '#92400e',
+          bg: 'var(--amber-bg)',
+          text: 'var(--amber-text)',
         },
         violet: {
-          bg: '#ede9fe',
-          text: '#5b21b6',
+          bg: 'var(--violet-bg)',
+          text: 'var(--violet-text)',
         },
       },
       animation: {

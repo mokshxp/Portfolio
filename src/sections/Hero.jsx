@@ -60,13 +60,13 @@ export default function Hero() {
             >
               <TypeAnimation
                 sequence={[
-                  'Full-stack developer & AI enthusiast.',
+                  'AI Engineer & Full-stack dev.',
                   1500,
-                  'I learn fast, build immediately.',
+                  'I build intelligent systems.',
                   1500,
-                  'FAANG is the destination.',
+                  'Solving intelligence is the mission.',
                   1500,
-                  'Real projects are the path.',
+                  'Research + Build + Iterate.',
                   1500,
                 ]}
                 wrapper="span"
@@ -121,7 +121,7 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="rounded-2xl overflow-hidden border border-[var(--line)]"
-            style={{ background: 'var(--surface)' }}
+            style={{ background: 'var(--card-bg)' }}
           >
             {/* Title bar */}
             <div className="px-4 py-3.5 border-b border-[var(--line)] flex items-center gap-2">
@@ -135,10 +135,10 @@ export default function Hero() {
               <span className="syn-cmt">{'// who i am'}</span><br />
               {'{'}<br />
               <span className="ml-4"><span className="syn-key">"name"</span>: <span className="syn-str">"Moksh Gupta"</span>,</span><br />
-              <span className="ml-4"><span className="syn-key">"focus"</span>: <span className="syn-str">"DSA + AI + Web"</span>,</span><br />
+              <span className="ml-4"><span className="syn-key">"focus"</span>: <span className="syn-str">"ML + Agents + Full-stack"</span>,</span><br />
               <span className="ml-4"><span className="syn-key">"location"</span>: <span className="syn-str">"India"</span>,</span><br />
               <span className="ml-4"><span className="syn-key">"projects"</span>: <span className="syn-num">3</span>,</span><br />
-              <span className="ml-4"><span className="syn-key">"goal"</span>: <span className="syn-str">"FAANG"</span>,</span><br />
+              <span className="ml-4"><span className="syn-key">"goal"</span>: <span className="syn-str">"SOTA AI"</span>,</span><br />
               <span className="ml-4"><span className="syn-key">"building"</span>: <span className="syn-num">true</span>,</span><br />
               <span className="ml-4"><span className="syn-key">"available"</span>: <span className="syn-num">true</span></span><br />
               {'}'}<span className="inline-block w-[7px] h-[13px] ml-0.5 align-middle animate-blink" style={{ background: 'var(--ink)' }} />

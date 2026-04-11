@@ -9,7 +9,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       aria-label="Toggle dark mode"
       className="relative w-9 h-9 flex items-center justify-center rounded-lg border border-[var(--line)] hover:border-[var(--ink2)] transition-colors"
-      style={{ background: 'var(--surface)' }}
+      style={{ background: 'var(--card-bg)' }}
     >
       <AnimatePresence mode="wait">
         {isDark ? (

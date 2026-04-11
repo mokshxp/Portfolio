@@ -28,7 +28,7 @@ function SkillCard({ icon, label, tags, delay }) {
       onMouseEnter={() => setCursor('link')}
       onMouseLeave={resetCursor}
       className="p-5 rounded-xl border border-[var(--line)]"
-      style={{ background: 'var(--surface)' }}
+      style={{ background: 'var(--card-bg)' }}
     >
       <div className="mb-4" style={{ color: 'var(--ink2)' }}>
         {(() => {

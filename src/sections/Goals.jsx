@@ -2,9 +2,9 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { goals } from '../data/portfolio';
 import { useStore } from '../store/useStore';
-import { Target, Construction, Rocket, Cpu, Settings, TrendingUp } from 'lucide-react';
+import { Target, Construction, Rocket, Cpu, Settings, TrendingUp, Brain, Search } from 'lucide-react';
 
-const icons = { Target, Construction, Rocket, Cpu, Settings, TrendingUp };
+const icons = { Target, Construction, Rocket, Cpu, Settings, TrendingUp, Brain, Search };
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -27,7 +27,7 @@ function GoalCard({ icon, title, desc, delay }) {
       onMouseEnter={() => setCursor('link')}
       onMouseLeave={resetCursor}
       className="p-8 rounded-xl border border-[var(--line)] transition-colors"
-      style={{ background: 'var(--surface)' }}
+      style={{ background: 'var(--card-bg)' }}
     >
       <div className="mb-5" style={{ color: 'var(--ink2)' }}>
         {(() => {

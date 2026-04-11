@@ -86,41 +86,41 @@ Built with vanilla JavaScript and the HTML5 Canvas API — zero dependencies, pu
 
 export const skills = [
   {
+    icon: 'Cpu',
+    label: 'AI / ML',
+    tags: ['PyTorch', 'Large Language Models (LLMs)', 'Computer Vision', 'Generative AI', 'Agents'],
+  },
+  {
     icon: 'CodeXml',
     label: 'Languages',
-    tags: ['Python', 'C++', 'JavaScript', 'Dart'],
+    tags: ['Python', 'C++', 'JavaScript', 'SQL'],
   },
   {
     icon: 'Globe',
-    label: 'Web Dev',
-    tags: ['React', 'Node.js', 'Express', 'Vite', 'HTML/CSS'],
+    label: 'Infrastructure & Fullstack',
+    tags: ['FastAPI', 'React', 'Node.js', 'Vite', 'Docker'],
   },
   {
     icon: 'Layers',
-    label: 'Fundamentals',
-    tags: ['DSA', 'Algorithms', 'OOP', 'System Design'],
-  },
-  {
-    icon: 'Cpu',
-    label: 'AI / ML',
-    tags: ['ML Basics', 'Groq AI', 'OpenAI', 'Neural Nets'],
+    label: 'Foundations',
+    tags: ['Mathematics for ML', 'Advanced Algorithms', 'Systems Design'],
   },
 ];
 
 export const goals = [
-  { icon: 'Target', title: 'DSA mastery', desc: 'Dominate coding interviews. Solve hard problems on LeetCode and Codeforces consistently, at speed.' },
-  { icon: 'Construction', title: 'Real projects', desc: 'Ship production-grade apps that solve genuine problems. A portfolio that speaks louder than a resume.' },
-  { icon: 'Rocket', title: 'FAANG placement', desc: 'Land a role at Google, Amazon, or equivalent — through deep skills and relentless preparation.' },
-  { icon: 'Cpu', title: 'AI/ML expertise', desc: 'Build and deploy real ML models. Understand neural networks deeply and contribute to AI projects.' },
-  { icon: 'Settings', title: 'Backend & scale', desc: 'Master distributed systems, scalable APIs, and what makes software truly production-ready.' },
-  { icon: 'TrendingUp', title: 'Constant growth', desc: 'Every day sharper than the last. No plateau, no complacency — relentless improvement.' },
+  { icon: 'Brain', title: 'AI Engineering', desc: 'Building intelligent systems that push the boundaries of automation. From LLM agents to custom vision models.' },
+  { icon: 'Search', title: 'ML Research', desc: 'Understanding the "why" behind model architectures. Implementing papers and contributing to open-source AI projects.' },
+  { icon: 'Rocket', title: 'Scalable Inference', desc: 'Optimizing model deployment for real-world use. Focusing on sub-1s latency and massive throughput.' },
+  { icon: 'Cpu', title: 'Silicon to Software', desc: 'Bridging the gap between hardware constraints and software excellence. Mastering hardware acceleration (NVIDIA NIM, CUDA).' },
+  { icon: 'Construction', title: 'Impactful Products', desc: 'Shipping production-grade AI tools that solve genuine problems, not just generic chatbots.' },
+  { icon: 'TrendingUp', title: 'Constant growth', desc: 'Every day sharper than the last. In AI, staying still is moving backward. I move forward.' },
 ];
 
 export const learningItems = [
-  { label: 'Advanced DSA', pct: 65, status: 'in progress' },
-  { label: 'Full-Stack Dev', pct: 50, status: 'in progress' },
-  { label: 'Machine Learning', pct: 30, status: 'early stage' },
-  { label: 'Deep Learning', pct: 20, status: 'roadmap' },
+  { label: 'LLM Orchestration (LangChain/Graph)', pct: 85, status: 'active' },
+  { label: 'Computer Vision Architectures', pct: 60, status: 'deep dive' },
+  { label: 'Reinforcement Learning', pct: 25, status: 'exploring' },
+  { label: 'MLOps & Deployment', pct: 40, status: 'learning' },
 ];
 
 export const marqueeWords = [
