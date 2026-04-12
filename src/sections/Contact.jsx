@@ -113,7 +113,7 @@ export default function Contact() {
               { label: '✉ Email', href: 'mailto:gmoksh985@gmail.com' },
               { label: 'GitHub',   href: 'https://github.com/mokshxp' },
               { label: 'LinkedIn', href: 'https://linkedin.com/in/mokshgupta' },
-              { label: 'LeetCode', href: 'https://leetcode.com/u/mokshxp' },
+              { label: 'LeetCode', href: 'https://leetcode.com/u/_mokshgupta_' },
             ].map((link) => (
               <a
                 key={link.label}
