@@ -10,14 +10,14 @@ export function useLeetCodeStats() {
   useEffect(() => {
     async function fetchStats() {
       try {
-        // Using a public CORS-friendly API for LeetCode stats
-        const res = await fetch(`https://leetcode-stats-api.herokuapp.com/${LEETCODE_USERNAME}`);
+        // Using Faisal's LeetCode API as a reliable alternative
+        const res = await fetch(`https://leetcode-api-faisalshohag.vercel.app/${LEETCODE_USERNAME}`);
         
         if (!res.ok) throw new Error('LeetCode API error');
 
         const data = await res.json();
         
-        if (data.status === 'error') throw new Error(data.message || 'User not found');
+        if (data.status === 'error' || !data.totalSolved) throw new Error('Data fetch failed');
 
         setStats({
           total: data.totalSolved || 0,
@@ -25,8 +25,8 @@ export function useLeetCodeStats() {
           medium: data.mediumSolved || 0,
           hard: data.hardSolved || 0,
           ranking: data.ranking || 0,
-          streak: 12, // The HEROKU API doesn't provide streak directly, so we use a fallback or placeholder
-          totalActiveDays: data.contributionPoints || 0,
+          streak: 12, // Placeholder as Faisal's API doesn't provide streak directly
+          totalActiveDays: data.contributionPoint || 0,
         });
       } catch (err) {
         console.warn('LeetCode API failed, using fallback data');
