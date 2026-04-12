@@ -66,9 +66,6 @@ export default function Navbar() {
             ? section === 'projects'
             : activeSection === section;
 
-          const isExternal = href.startsWith('http');
-          const isAnchor = href.includes('#');
-
           // Use Link for everything to keep it SPA
           return (
             <Link

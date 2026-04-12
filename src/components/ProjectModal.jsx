@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '../store/useStore';
-import { useStore as useZustand } from 'zustand';
+
 
 export default function ProjectModal() {
   const { modalProject, closeModal, setCursor, resetCursor } = useStore();

@@ -32,17 +32,19 @@ function FloatingMesh() {
   );
 }
 
+const generatePositions = (count) => {
+  const arr = new Float32Array(count * 3);
+  for (let i = 0; i < count; i++) {
+    arr[i * 3]     = (Math.random() - 0.5) * 10;
+    arr[i * 3 + 1] = (Math.random() - 0.5) * 10;
+    arr[i * 3 + 2] = (Math.random() - 0.5) * 5;
+  }
+  return arr;
+};
+
 function ParticleField() {
   const count = 80;
-  const positions = useMemo(() => {
-    const arr = new Float32Array(count * 3);
-    for (let i = 0; i < count; i++) {
-      arr[i * 3]     = (Math.random() - 0.5) * 10;
-      arr[i * 3 + 1] = (Math.random() - 0.5) * 10;
-      arr[i * 3 + 2] = (Math.random() - 0.5) * 5;
-    }
-    return arr;
-  }, []);
+  const positions = useMemo(() => generatePositions(count), []);
 
   const pointsRef = useRef();
   useFrame((state) => {

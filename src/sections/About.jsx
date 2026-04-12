@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useGitHubStats } from '../hooks/useGitHubStats';
-import { useStore } from '../store/useStore';
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -43,7 +43,7 @@ function GitHubStat({ value, label, loading }) {
 
 export default function About() {
   const { stats, loading } = useGitHubStats();
-  const { setCursor, resetCursor } = useStore();
+
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 

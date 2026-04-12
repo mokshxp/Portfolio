@@ -1,4 +1,4 @@
-import { useRef, Suspense } from 'react';
+import { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { useStore } from '../store/useStore';
