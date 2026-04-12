@@ -118,7 +118,7 @@ export const goals = [
 
 export const learningItems = [
   { label: 'LLM Orchestration (LangChain/Graph)', pct: 85, status: 'active' },
-  { label: 'Computer Vision Architectures', pct: 60, status: 'deep dive' },
+  { label: 'Fullstack Architecture', pct: 90, status: 'expert' },
   { label: 'Reinforcement Learning', pct: 25, status: 'exploring' },
   { label: 'MLOps & Deployment', pct: 40, status: 'learning' },
 ];
