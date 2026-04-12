@@ -93,7 +93,7 @@ export const skills = [
   {
     icon: 'CodeXml',
     label: 'Languages',
-    tags: ['Python', 'C++', 'JavaScript', 'SQL'],
+    tags: ['Python', 'C++', 'JavaScript', 'SQL', 'HTML', 'CSS'],
   },
   {
     icon: 'Globe',
