@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const LEETCODE_USERNAME = '_mokshgupta_'; // ← change to your real username
+const LEETCODE_USERNAME = 'mokshxp'; // ← Updated to your real username
 
 export function useLeetCodeStats() {
   const [stats, setStats] = useState(null);
